@@ -1,0 +1,119 @@
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+You can return the answer in any order.
+
+ 
+
+Example 1:
+
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
+Example 2:
+
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+__________________________________________________________________________________
+basic::::
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int out[] =new int[2];
+        for(int i=0;i<nums.length;i++){
+            for(int j=i;j<nums.length;j++){
+                if(nums[i]+nums[j]==target &&i!=j){
+                   out[0]=i;
+                   out[1]=j;
+                }
+            }
+        }
+        return out;
+
+    }
+}
+-------------------
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int n=nums.length;
+        Map<Integer,Integer> map=new HashMap<>();
+        int[] result=new int[2];
+        for(int i=0;i<n;i++){
+            if(map.containsKey(target-nums[i])){
+                result[1]=i;
+                result[0]=map.get(target-nums[i]);
+                return result;
+            }
+            map.put(nums[i],i);
+        }
+        return result;
+    }
+}
+_________________________________________________________________________________________
+
+2.Input: prices = [7,1,5,3,6,4]
+Output: 5
+Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+Example 2:
+
+Input: prices = [7,6,4,3,1]
+Output: 0
+Explanation: In this case, no transactions are done and the max profit = 0.
+--------------------------------------------------------------------------------------------------
+class Solution {
+    public int maxProfit(int[] prices) {
+        int MAX= Integer.MAX_VALUE;                   //IT WILL RETURN MAX INT IN ARRAY
+        int op = 0;
+        int pist = 0;
+        
+        for(int i = 0; i < prices.length; i++){
+            if(prices[i] < MAX{
+                lsf = prices[i];
+            }
+            pist = prices[i] - MAX;
+            if(op < pist){
+                op = pist;
+            }
+        }
+        return op;
+    }
+}
+_____________________________________________________________
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+
+You must write an algorithm that runs in O(n) time and without using the division operation.
+
+ 
+
+Example 1:
+
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+Example 2:
+
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0]
+----------------------------------------------------------------------------------
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int out[] =new int[nums.length];
+        int x=0;
+        while(x<nums.length){
+          int res=1;
+          for(int i=0;i<nums.length;i++){
+            if(i!=x){
+             res=res*nums[i];
+            }    
+          }   
+          out[x]=res;
+          x++;
+        }
+        return out;
+        
+    }
+}
+_______________________________________________________________________________

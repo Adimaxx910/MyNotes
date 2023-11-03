@@ -1,0 +1,83 @@
+REACT NATIVE AND EXPO
+_____________________________________________
+>we use expo here
+         expo router
+>view and text we use here instead of html elemnts
+>here TouchableOpacity 
+              we use instead of buttons.
+> ActivityIndicator
+   	 used for showing a spinnner or loading icon
+>Flatlist: 
+ 	used for rendering long list of items
+	similar to map 
+	
+>Scrollview
+	like an magic box that can hold multiple 	components and views,providing scrollingb 	container for them.
+	its like overflow-scroll in html
+>SafeAreaView
+	The safe area is the portion of the screen that is 	not covered by the device's status bar, notches, 	rounded corners, and other system-provided UI 	elements. 	
+
+		  	 STEPS
+		_____________________
+1.) npx create-expo-app@latest --example with-router
+	npx is a package runner tool that comes with Node.js and npm 	(Node Package Manager). 
+_____________________________________________________________
+2.)create an app foldder
+	create two files index.js and _layout.js
+	inside layout.js  put this code
+		
+		import { Stack } from "expo-router";
+		const layout=()=>{
+		   return(
+ 		  <Stack/>
+   		)}
+		export default layout;
+
+      	
+The Stack component from expo-router is used to create a stack of navigation screens in React Native. This allows you to navigate between screens in a hierarchical manner, with the ability to go back and forth between screens in the stack.
+why we use this bcos::
+	To create a simple navigation flow, such as a stack of onboarding 	screens or a stack of screens for a specific feature in your app.
+
+import React from "react";
+import { Stack } from "expo-router";
+
+const Screen1 = () => {
+  return <div>Screen 1</div>;
+};
+
+const Screen2 = () => {
+  return <div>Screen 2</div>;
+};
+
+const layout = () => {
+  return (
+    <Stack>
+      <Screen1 />
+      <Screen2 />
+    </Stack>
+  );
+};
+
+export default layout;
+-----------------------------------------
+
+                                               In Layout.js
+
+import {view,text} from 'react-native';
+
+const Home= ()=>{
+   return(
+    <view>
+        <text>Home</text>
+    </view>
+   )
+}
+
+export default Home;
+_______________________________________________________________
+3.) npm install expo-font axios react-native-dotenv
+
+ 
+
+
+

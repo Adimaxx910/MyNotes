@@ -1,0 +1,448 @@
+Complete React Roadmap 😄
+
+Here's everything you need to learn 🙌
+
+1.Components
+• Functional Components
+• Class Components
+• JSX (JavaScript XML) Syntax
+
+2.Props (Properties)
+• Passing Props
+• Default Props
+• Prop Types
+
+3.State
+• useState Hook
+• Class Component State
+• Immutable State
+
+4.Lifecycle Methods (Class Components)
+• componentDidMount
+• componentDidUpdate
+• componentWillUnmount
+
+5.Hooks (Functional Components)
+• useState
+• useEffect
+• useContext
+• useReducer
+• useCallback
+• useMemo
+• useRef
+• useImperativeHandle
+• useLayoutEffect
+
+6.Event Handling
+• Handling Events in Functional Components
+• Handling Events in Class Components
+
+7.Conditional Rendering
+• if Statements
+• Ternary Operators
+• Logical && Operator
+
+8.Lists and Keys
+• Rendering Lists
+• Keys in React Lists
+
+9.Component Composition
+• Reusing Components
+• Children Props
+• Composition vs Inheritance
+
+10.Higher-Order Components (HOC)
+• Creating HOCs
+• Using HOCs for Reusability
+
+11.Render Props
+• Using Render Props Pattern
+
+12.React Router
+• <BrowserRouter>
+• <Route>
+• <Link>
+• <Switch>
+• Route Parameters
+
+13.Navigation
+• useHistory Hook
+• useLocation Hook
+
+State Management
+14.Context API
+• Creating Context
+• useContext Hook
+
+15.Redux
+• Actions
+• Reducers
+• Store
+• connect Function (React-Redux)
+
+16.Forms
+• Handling Form Data
+• Controlled Components
+• Uncontrolled Components
+
+17.Side Effects
+• useEffect for Data Fetching
+• useEffect Cleanup
+
+18.AJAX Requests
+• Fetch API
+• Axios Library
+
+Error Handling
+19.Error Boundaries
+• componentDidCatch (Class Components)
+• ErrorBoundary Component (Functional
+Components)
+
+20.Testing
+• Jest Testing Framework
+• React Testing Library
+
+21. Best Practices
+• Code Splitting
+• PureComponent and React.memo
+• Avoiding Reconciliation
+• Keys for Dynamic Lists
+
+22.Optimization
+• Memoization
+• Profiling and Performance Monitoring
+
+23. Build and Deployment
+• Create React App (CRA)
+• Production Builds
+• Deployment Strategies
+
+Frameworks and Libraries
+24.Styling Libraries
+• Styled-components
+• CSS Modules
+
+25.State Management Libraries
+• Redux
+• MobX
+
+26.Routing Libraries
+• React Router
+• Reach Router
+
+---------------- END -----------------
+
+Best resources to learn React quickly
+
+1.Documentation
+
+Official Updated React Documentation
+react.dev
+MDN Web Docs
+shorturl.at/tCL69
+
+2. YouTube Channel's
+
+• Traversy Media: https://lnkd.in/ga5zshJa
+• The Net Ninja: youtube.com/c/TheNetNinja
+• FreeCodeCamp: youtube.com/c/FreeCodeCamp
+• Academind: youtube.com/c/Academind
+
+_______________________________________________________________
+
+Project Folder
+
+A typical React JS project folder in Node.js might look like this:
+
+my-react-project/
+├── package.json
+├── node_modules/
+├── src/
+│   ├── api/
+│   │   ├── index.js
+│   │   └── user.js
+│   ├── components/
+│   │   ├── Avatar.js
+│   │   ├── Button.js
+│   │   └── Input.js
+│   ├── context/
+│   │   ├── AuthContext.js
+│   │   └── UserContext.js
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   └── useUser.js
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   └── Profile.js
+│   └── index.js
+└── public/
+    ├── index.html
+    ├── favicon.ico
+    └── manifest.json
+Inside Files
+
+package.json: This file contains metadata about your project, such as its name, version, dependencies, and scripts.
+node_modules: This folder contains all of the Node.js packages that your project depends on.
+src/: This folder contains all of your source code, including your React components, pages, and other files.
+public/: This folder contains all of the static assets that your project needs, such as HTML, CSS, images, and fonts.
+Specific Files
+
+src/index.js: This is the entry point for your React application. It renders the root component of your application.
+src/pages/index.js: This is the home page of your application.
+src/components/Avatar.js: This is a React component that renders an avatar image.
+src/context/AuthContext.js: This is a React context that provides authentication information to your application.
+src/hooks/useAuth.js: This is a React hook that provides authentication functionality to your application.
+Grouping Files
+
+There are two common ways to group files in a React JS project in Node.js:
+
+By feature: This means grouping files together based on the feature of your application that they support. For example, you might have a src/components/ folder for all of your React components, a src/pages/ folder for all of your pages, and a src/context/ folder for all of your React contexts.
+By file type: This means grouping files together based on their file type. For example, you might have a src/components/ folder for all of your React components, a src/styles/ folder for all of your CSS files, and a src/scripts/ folder for all of your JavaScript files.
+
+What is ES6?
+• ES6 stands for ECMAScript 6.
+• ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript
+ React uses ES6, and you should be familiar with some of the new features like:
+• Classes
+• Arrow Functions
+• Variables (let, const, var)
+• Array Methods like .map()
+• Destructuring
+• Modules
+• Ternary Operator
+• Spread Operator
+
+
+THIS in Regular Functionnn
+_________________________
+• With a regular function, this represents the object that called the function or Class methods:
+
+This In Arrow function
+__________________________-
+• With an arrow function, this represents the Header object no matter who called the function:
+
+Array Methods:
+const myArray = ['apple', 'banana', 'orange’];
+const myList = myArray.map((item) => <p>{item}</p>)
+______________________________________________________________________
+                                                               DESTRUCTURING::
+		       _________________________________
+1.)
+const vehicles = ['mustang', 'f-150', 'expedition’];
+const [car, truck, suv] = vehicles;
+
+2.)
+const vehicles = ['mustang', 'f-150', 'expedition’];
+const [car,, suv] = vehicles;
+
+3.)
+const vehicleOne = { // With destructuring:
+brand: 'Ford’,
+model: 'Mustang’,
+type: 'car’,
+year: 2021,
+color: 'red’
+}
+myVehicle(vehicleOne);
+function myVehicle({type, color, brand, model}) {
+const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.’;
+}
+
+4.)We can even destructure deeply nested objects by referencing the nested object then using a colon and curly 
+braces to again destructure the items needed from the nested object:
+const vehicleOne = {
+brand: 'Ford’,
+model: 'Mustang’,
+type: 'car’,
+year: 2021,
+color: 'red’,
+registration: {
+city: 'Houston’,
+state: 'Texas’,
+country: 'USA’
+}
+}
+myVehicle(vehicleOne)
+function myVehicle({ model, registration: { state } }) {
+const message = 'My ' + model + ' is registered in ' + state + '.’;
+}
+
+                                         		reactJS project creation
+				_____________________
+1.)	
+ 		 installing vite
+2.)project name
+3.)selct react
+4.)selct js
+5.)now go inside our project folder 
+    cd projectname
+6.)npm i
+    	installing react
+7.)install tailwind if u r using Vite framework
+	npm install -D tailwindcss postcss autoprefixer
+	npx tailwindcss init -p
+8.)goto tailwind.config.js file 
+	replace it with this..
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+9.)create a tailwind.css inside ur src
+     and paste these libraries
+		@import 'tailwindcss/base';
+		@import 'tailwindcss/components';
+		@import 'tailwindcss/utilities';
+10.)NOW IMPORT THIS TAILWIND.CSS in whichever css file u want to use 
+	@import './tailwind.css';
+
+11.)now run the application
+	NPM RUN DEV	
+
+12.)to install router inside your project 
+
+		npm install react-router-dom
+
+--------------------------------------------------------------------------------------NAVBAR LINKING::ROUTINGGGGGGGGGGGGGGG
+1.) install Routing library
+	npm install react-router-dom
+
+2.) import { Link ,NavLink} from 'react-router-dom'
+
+
+ <nav className='flex w-full justify-between'>
+       <div>WDAEF</div>
+       <div className=''>
+          <ul className='flex justify-between'>
+            <li className='mr-3 border border-red-500 bg-blue-600             rounded-md pl-4 pr-4'>
+<NavLink to="/" >Home</NavLink></li>
+ <li className='mr-3  border border-red-500 bg-blue-600 rounded-md pl-4 pr-4'>
+<NavLink to="/Footer" >log</NavLink></li>
+<li className='mr-3  border border-red-500 bg-blue-600 rounded-md pl-4 pr-4'>
+<NavLink to="/somewher">About</NavLink></li>
+          </ul>
+       </div>
+       <div>DW</div>
+ </nav>
+
+3.) In App.jsx ---root file
+	import all the route components ,I mean all the page components.
+like Home,About ,Login etc.
+-->Also import these file s from  router library
+-->Create Routes Folder And
+--->Create Routes.jsx file inside it..
+-->import the
+ import { BrowserRouter as Router,Routes,Route,Navigate} from "react-router-dom";
+-->>import all the  Route Components  now..
+-->  create approuter function like this and export 
+
+	const AppRouter=()=>{
+ 	   return (
+    	    <Router>
+     	           <Routes>
+        	        	<Route path="/" element={<Header/>}/>
+        	        	<Route path="/Footer" element={<Footer/>}/>
+         	       	<Route path="/Layout" element={<Layout/>}/>
+       	           </Routes>
+      	  </Router>
+  	  )
+	}
+	export default AppRouter
+
+
+--->>now import this Routes file  in App.jsx
+	import Routes from './Routes/Routes'
+---->function App() {
+  const [count, setCount] = useState(0)
+  return ( <Routes/> )}
+----->now The page will render and navigation will happen...
+
+a.)First all things should be inside Router
+b.)ALll page routes should be in Routes
+c.)Each page should be in Route Element.
+
+ <Router>
+          <Routes>
+              <Route path='/' exact Component={Header}></Route>
+                <Route path='/footer' Component={Footer}></Route>
+          </Routes>
+  </Router> 
+___________________________________________________
+HOW TO PLACE AN ELEMNT AT BOTTOM::tailwind
+
+  <footer className='h-screen w-full flex flex-col '>
+        <div className=' mt-auto w-full ' >Welcome to the FOoter Page!                 </div>
+  </footer>
+
+_________________________________________________________________Context Api---------------------------------
+1.)Create Context file  
+   save it in const
+   Export it 
+          NoteContext.js
+	import React, {createContext} from 'react'
+	const notecontext=createContext();	
+	export default notecontext;
+ 2.)Create A STate file
+	noteState.js
+	import the NoteContext.js	 
+	define a function called NoteState()
+------------------------------------
+const NoteState=(props)=>{                  			    /*  <NoteState someProp="Hello" /> --this is how a component will passs the prop*/
+    
+    const myvariable={
+        "name":"Adithya",
+        "code":"maxx",
+    }
+  return(
+  						  // You are essentially making the data stored in myvariable accessible to any component
+  						  // that is a consumer of the notecontext context. 
+    <notecontext.Provider value={myvariable}>  
+        {props.children}				//since a component may have multiple child component inside it if we give  {props.children} then all the child components        </notecontext.Provider> 				//inside the parent componet can accesss the CONTEXT...
+   )
+}
+
+export default NoteState
+--------------------------------------------------------------
+
+							json server
+					__________________________________________________
+1.)Cretae json file 
+   and name it
+2.)install json server 
+  	  npm install -g json-server
+3.)run this
+	json-server --watch name.json --port 3030
+4.)
+
+
+_____________________________________________________________________Dynamic Icon Importing_____________________________________________
+1.)npm install babel-plugin-macros
+2.)npm install --save-dev @fortawesome/fontawesome-free
+3.)import in main.jsx
+	import '@fortawesome/fontawesome-free/css/all.min.css';
+
+______________________________________________________________________TEMPLATE LITERALS_____________________________________________________________________
+`/MovieDetails/${props.Id}}`---->in template literals we wont use single quotesor double quotes.
+			-->we use  backticks `${}`
+________________________________________________________________________IMPortant React  Point______________________________________________________
+
+  const[currentmovidetail,setcurrentmoviedetail]=useState(null)
+when the above state is changing fatslyy.then this condition will be besttt for use.....
+
+ if (!currentmovidetail) {
+        return <div>Loading...</div>; // Display loading message while fetching data
+    }  
+
+
+__________LOGIN page to dashbooard use Navigation from roter dom.It will work after specifieng condition._____________________________________
+

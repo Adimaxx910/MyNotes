@@ -1,0 +1,512 @@
+
+
+function validateForm() {
+  const member = document.getElementById("member");
+  const name = document.getElementById("Name").value;
+  const mobileNo = document.getElementById("Mobileno").value;
+  
+  const email = document.getElementById("Emailid").value;
+  const bloodGroupInput = document.getElementById("Bloodgroup").value;
+  const dob = document.getElementById("DoB").value;
+  const singleOption = document.querySelector('input[name="mStatus"][value="single"]');
+  const marriedOption = document.querySelector('input[name="mStatus"][value="married"]');  //const permanentAddress = document.getElementById("permadr").value;
+  const presentAddress = document.getElementById("preadr").value;
+  const checkbox1 = document.getElementById("check1").checked;
+  const checkbox2 = document.getElementById("check2").checked;
+  const checkbox3 = document.getElementById("check3").checked;
+ //console.log("test");
+  if (member === "") {
+    alert("Please enter a Membership No.");
+    return false;
+  }
+  else if (name.trim() === "") {
+      alert("Please enter a Member Name.");
+      return false;
+  }
+  else if (mobileNo.trim() === "") {
+      alert("Please enter a Mobile Number.");
+      return false;
+  }
+    
+  if (email.trim() === ""  ||email=== null) {
+      alert("Please enter an Email ID.");
+      return false;    
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    alert("please enter correct email format");
+    return false;
+  }
+
+else if (bloodGroupInput.trim() === "") {
+  alert("Please select a Blood Group.");
+  return false;
+}
+var anniversaryDate = document.getElementById("marry");
+var spouseName = document.getElementById("HWname");
+if (anniversaryDate.disabled == false) {
+  if (anniversaryDate.value === "" || spouseName.value === "") {
+    alert(
+      "Please Enter the details of Anniversary date and Husband/Wife Name"
+    );
+    return false;
+  }
+}
+var birthdateInput = document.getElementById("DoB");
+var birthdate = new Date(birthdateInput.value);
+var currentDate = new Date();
+if (isNaN(birthdate.getTime())) {
+        // Invalid date
+  alert("Please enter a valid birth date.");
+  birthdateInput.value = ""; // Clear the input field
+  return false;
+}
+
+      // Check if the entered date is in the future
+if (birthdate > currentDate) {
+  alert("Please enter a birth date that is not in the future.");
+   birthdateInput.value = ""; // Clear the input field
+  return false;
+}
+else if (dob.trim() === "") {
+  alert("Please enter a Date of Birth.");
+  return false;
+}
+ else if (!singleOption.checked && !marriedOption.checked) {
+    alert("Please select a marital status.");
+    return false;
+  }
+else if (presentAddress.trim() === "") {
+  alert("Please enter a Present Address.");
+  return false;
+}
+else if (!checkbox1 || !checkbox2 || !checkbox3) {
+  alert("Please check all the required checkboxes.");
+  return false;
+}
+else if(mobileNo.trim()!== ""){
+  var regex = /^\d{10}$/;
+  if (regex.test(mobileNo)) {
+    return true; // Valid mobile number
+  } 
+  
+  else {
+    alert("Please enter a valid Mobile Number.");
+
+    return false; // Invalid mobile number
+  }
+  }
+
+
+
+return true;
+
+}
+
+var Name = document.getElementById("Name");
+var Mobileno = document.getElementById("Mobileno");
+var AltMobileNo = document.getElementById("AltMobileNo");
+var Emailid = document.getElementById("Emailid");
+var Bloodgroup = document.getElementById("Bloodgroup");
+var DoB = document.getElementById("DoB");
+ 
+var AnniversaryDate = document.getElementById("marry");
+var HusOrWifeName = document.getElementById("HWname");
+var EmpDetails = document.getElementById("emp");
+var Designation = document.getElementById("des");
+var Department = document.getElementById("Department");
+var PremAddress = document.getElementById("permadr");
+var PresAdderess = document.getElementById("preadr");
+var AddComments = document.getElementById("com");
+var Participation = document.getElementById("check1");
+var RuleAndRegulation = document.getElementById("check2");
+var ReciveEmail = document.getElementById("check3");
+let sameAddressCheckbox = document.getElementById("sameadr");
+var maritialstatus;
+
+var todayDate = document.getElementById("date");
+var place=document.getElementById("place");
+
+function copyAddress() {
+  var presentAddress = PresAdderess.value;
+  var permanentAddress = document.getElementById("permadr");
+
+  if (sameAddressCheckbox.checked) {
+    permanentAddress.value = presentAddress;
+    // permanentAddress.disabled = true; // Optional: Disable editing of permanent address
+  } else {
+    permanentAddress.value = "";
+    // permanentAddress.disabled = false; // Optional: Enable editing of permanent address
+  }
+}
+let c = 0
+PresAdderess.addEventListener('input',()=>{
+  if(sameAddressCheckbox.checked){
+    PremAddress.value = PresAdderess.value;
+  }
+});
+function persentAddChanged(){
+  
+  c=c+1;
+  console.log("value changed"+c);
+}
+
+
+function addRow() {
+    var table = document.getElementById("myTable");
+    var row = table.insertRow();
+    var nameCell = row.insertCell();
+    var genderCell = row.insertCell();
+    var dobCell = row.insertCell();
+    var maritalCell = row.insertCell();
+    var actionCell = row.insertCell();
+  
+    nameCell.innerHTML = '<input class="no" type="text" id="namechild" />';
+    genderCell.innerHTML = '<input class="no" type="text" id="genderchild" />';
+    dobCell.innerHTML = '<input class="no" type="date" id="dobchild" />';
+    maritalCell.innerHTML = '<input class="no" type="text" id="marrychild" />';
+    actionCell.innerHTML = '<button type="button" onclick="removeRow(this)">DEL</button>';
+  }
+  function removeRow(button) {
+    var row = button.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+  }
+
+function emptyChecker(value){
+  console.log(value === "");
+  return value === "";
+}
+
+function backButton(){
+  window.location.href= "./index.html"
+}
+// function toggleMarriedFields(isMarried) {
+//   var anniversaryDate = document.getElementById("marry");
+//   var spouseName = document.getElementById("HWname");
+
+//   anniversaryDate.disabled = !isMarried;
+//   spouseName.disabled = !isMarried;
+// }
+
+function myFunction(){  
+  
+  if(!this.validateForm()){
+    return;
+  }
+  // this.uploadToAzureStorage();
+
+  if(document.getElementById('sing').checked){
+    maritialstatus=document.getElementById('sing').value;
+ }
+ if(document.getElementById('mar').checked){
+   maritialstatus=document.getElementById('mar').value;
+ }
+
+  var table = document.getElementById("myTable");
+  var rows = table.getElementsByTagName("tr");
+  var datatable = [];
+
+  
+  for (var i = 1; i < rows.length; i++) {
+
+    var row = rows[i];
+    var nameInput = row.querySelector("input[id='namechild']");
+    var genderInput = row.querySelector("input[id='genderchild']");
+    var dobInput = row.querySelector("input[id='dobchild']");
+    var marryInput = row.querySelector("input[id='marrychild']");
+
+
+    
+    var entry = {
+      Cname: nameInput.value,
+      gender: genderInput.value,
+      cDoB: dobInput.value,
+      childMaritialstatus: marryInput.value
+    };
+    if(i==1 && entry.Cname===""){
+      datatable=null;
+    }
+    else{
+          var birthdate = new Date(birthdateInput.value);
+          var currentDate = new Date();
+          var birthdateInput = dobInput;
+          
+          if (isNaN(birthdate.getTime())) {
+                  // Invalid date
+            alert("Please enter a valid birth date of your child.");
+            birthdateInput.value = ""; // Clear the input field
+            return;
+          }
+
+                // Check if the entered date is in the future
+          if (birthdate > currentDate) {
+            alert("Please enter a birth date that is not in the future of your child.");
+            birthdateInput.value = ""; // Clear the input field
+            return;
+          }
+          else if (birthdate.trim() === "") {
+            alert("Please enter a Date of Birth of your child.");
+            return;
+          }
+    datatable.push(entry);
+    }
+  }
+  console.log("Datatable => "+datatable);
+    
+  if (
+    Name.value !== "" &&
+    Mobileno.value !== "" &&
+    Emailid.value !== "" &&
+    DoB.value !== "" &&
+    PresAdderess.value !== "" &&
+    Participation.value !== "" &&
+    RuleAndRegulation.value !== "" &&
+    ReciveEmail.value !== "") {
+    var member= {
+        name : Name.value,
+        mobileno : Mobileno.value,
+        altMobileno : AltMobileNo.value,
+        emailid : Emailid.value,
+        bloodgroup : Bloodgroup.value,
+        doB : DoB.value,
+        maritialstatus : maritialstatus,
+        anniversaryDate : emptyChecker(AnniversaryDate.value)?null:AnniversaryDate.value,
+        husOrWifeName : HusOrWifeName.value,
+        childrens:datatable,
+        maritialstatus :maritialstatus,
+        empDetails : EmpDetails.value,
+        designation : Designation.value,
+        department : Department.value,
+        premAddress : PremAddress.value,
+        presAdderess : PresAdderess.value,
+        addComments : AddComments.value,
+        participation : true,
+        ruleAndRegulation : true,
+        reciveEmail : true,
+        todayDate:emptyChecker(todayDate.value)?null:todayDate.value,
+        place:place.value
+
+    }
+    
+    console.log(member);
+
+    document.getElementById("myForm").reset();
+
+    //now generate the user detals pdf
+    var docDefinition = {
+      content: [
+        { text: 'REGISTRATION DETAILS', style: 'header' },
+        {text:'___________________________________________'},
+        
+        
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true
+        }
+      }
+    };
+    docDefinition.content.push({ text: "NAME " + '    :    ' + JSON.stringify(member['name']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "MOBILE NUMBER " + '    :    ' + JSON.stringify(member['mobileno']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "ALTERNATIVE NUMBER " + '    :    ' + JSON.stringify(member['altMobileno']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "EMAIL ID " + '    :    ' + JSON.stringify(member['emailid']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "DATE OF BIRTH " + '    :    ' + JSON.stringify(member['doB']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "MARITAL STATUS " + '    :    ' + JSON.stringify(member['maritialstatus']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "BLOOD GROUP " + '    :    ' + JSON.stringify(member['bloodgroup']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "If Married,ANNIVERSARY DATE " + '    :    ' + JSON.stringify(member['anniversaryDate']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "HUSBAND / WIFE NAME " + '    :    ' + JSON.stringify(member['husOrWifeName']) });
+    docDefinition.content.push({ text: '\n' });
+
+    docDefinition.content.push({ text: "CHILDREN DETAILS  " + '   :    '  });
+    docDefinition.content.push({ text: '\n' });
+   // docDefinition.content.push({ text: " NAME " + '              ' + " GENDER " + '               '+" DATEOFBIRTH " + '              '+" MARITALSTATUS "  });
+
+    let tableValue = [];
+    
+    if(member.childrens!=null  && member.childrens[0]['Cname']!=''){
+      let headers = ['Name','Gender','DateOfBirth','Marital Status'];
+      tableValue.push(headers);
+      console.log(member.childrens);
+      for(let i=0;i<member.childrens.length;i++){
+        let row =[];
+        console.log(member.childrens[i]);
+        for (var key in member.childrens[i]) {
+          console.log(key);
+            if (member.childrens[i].hasOwnProperty(key)) {
+                var value = member.childrens[i][key];
+                row.push(value);
+                // docDefinition.content.push({ text: key });
+                // docDefinition.content.push({ text: JSON.stringify(value) });           
+              }
+            }
+            tableValue.push(row);
+      }
+        console.log(tableValue);
+    }
+
+
+if(tableValue.length > 0){
+  docDefinition.content.push({table: {
+    // headers are automatically repeated if the table spans over multiple pages
+    // you can declare how many rows should be treated as headers
+    headerRows: 1,
+    widths: [ '*', 'auto', 100, '*' ],
+    body: tableValue
+  }});
+}
+    
+
+    docDefinition.content.push({ text: "EMPLOYEMENT DETAILS " + '    :    ' + JSON.stringify(member['empDetails']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "DESIGNATION " + '    :    ' + JSON.stringify(member['designation']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "DEPARTMENT " + '    :    ' + JSON.stringify(member['department']) });
+    docDefinition.content.push({ text: '\n' });
+    
+    //console.log("Before "+member['presAdderess'] );
+
+    var lines = member['presAdderess'].split("\n");
+    //console.log("After "+member['presAdderess'] );
+    if(lines.length>1){
+      docDefinition.content.push({ text: "PRESENT ADDRESS " + '    :    ' + lines[0] });
+      docDefinition.content.push({ text: '\n' });
+        for(let i=1;i<lines.length;i++){
+          docDefinition.content.push({ text:lines[i],margin: [135, 0, 0, 0] });
+        docDefinition.content.push({ text: '\n' });
+        }
+  }
+
+    else{
+      docDefinition.content.push({ text: "PRESENT ADDRESS " + '    :    ' + lines[0] });
+      docDefinition.content.push({ text: '\n' });
+    }
+
+    if(member['premAddress']!=undefined &&
+    member['premAddress']!=null &&
+    member['premAddress']!=''){
+      var linesPerma = member['premAddress'].split("\n");
+    //console.log("After "+member['presAdderess'] );
+    if(linesPerma.length>1){
+      docDefinition.content.push({ text: "PERMANENT ADDRESS " + '    :    ' + linesPerma[0] });
+      docDefinition.content.push({ text: '\n' });
+        for(let i=1;i<lines.length;i++){
+          docDefinition.content.push({ text:linesPerma[i],margin: [155, 0, 0, 0] });
+        docDefinition.content.push({ text: '\n' });
+        }
+  }
+
+    else{
+      docDefinition.content.push({ text: "PERMANENT ADDRESS " + '    :    ' + linesPerma[0] });
+      docDefinition.content.push({ text: '\n' });
+    }
+    }
+    else{
+      docDefinition.content.push({ text: "PERMANENT ADDRESS " + '    :    ' + JSON.stringify(member['premAddress']) });
+      docDefinition.content.push({ text: '\n' });
+    }
+
+    // docDefinition.content.push({ text: "PRESENT ADDRESS " + '    :    ' + member['presAdderess'] });
+    // docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "ADDITIONAL COMMENTS/FEEDBACKS IF ANY " + '    :    ' + JSON.stringify(member['addComments']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "As a registered member of Nammavaru, I would like to actively participate in Nammavaru programs/events" + '    :    ' + JSON.stringify(member['participation']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "I have read the Nammavaru Guidelinesand I hereby confirm to all Rules and Regulations of Nammavaru" + '    :    ' + JSON.stringify(member['ruleAndRegulation']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "I agree to recieve Nammavaru related SMS/ WhatsApp notifications" + '    :    ' + JSON.stringify(member['reciveEmail']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "DATE" + '    :    ' + JSON.stringify(member['todayDate']) });
+    docDefinition.content.push({ text: '\n' });
+    docDefinition.content.push({ text: "PLACE" + '    :    ' + JSON.stringify(member['place']) });
+    docDefinition.content.push({ text: '\n' });
+    
+     const pdfDocGenerator= pdfMake.createPdf(docDefinition);
+
+     pdfDocGenerator.getBlob(async (blob) => {
+      // Upload the PDF blob to Azure Blob Storage
+      const fileUrl = await uploadPDFToAzureBlob(blob);
+      console.log(`pdf file uploaded. URL:${fileUrl}`);
+      printFileUrl(fileUrl);
+
+    });
+
+    // Azure Blob
+    async function uploadPDFToAzureBlob(blob) {
+
+      const timestamp = new Date().getTime();
+       const blobName = `${member.name}-${timestamp}.pdf`;
+      const url = `https://${accountName}.blob.core.windows.net/${containerName}/${blobName}${sasToken}`;
+    
+      const response = await fetch(url, {
+        method: 'PUT',
+        body: blob,
+        headers: {
+          'x-ms-blob-type': 'BlockBlob',
+          'Content-Type': 'application/pdf'
+        }
+      })
+      
+      if (response.ok) {
+        const fileUrl = `https://${accountName}.blob.core.windows.net/${containerName}/${blobName}`;
+        console.log(fileUrl);
+        return fileUrl;
+
+      } else {
+        console.error(`Error uploading PDF to Azure Blob Storage. Status: ${response.status}, ${response.statusText}`);
+        return null;
+      }
+    }
+    // Api Calling
+    function printFileUrl(fileUrl) {
+      // Print or use the file URL in another function
+      console.log(`File URL: ${fileUrl}`);
+      // Perform additional actions with the file URL
+
+      const EmailRequest = {
+        Fileurl: fileUrl
+      } 
+      console.log(EmailRequest);
+
+      const apiUrl = 'https://nammavruwebapi.azurewebsites.net/api/email';
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(EmailRequest)
+      })
+        .then(response => {
+          if (response.ok) {
+            console.log('Object sent to the API successfully.');
+            alert("Registration successful");
+            // document.getElementById("myForm").reset();
+          } else {
+            console.error('Error sending object to the API:', response.status, response.statusText);
+            alert("Registration Failed");
+            // document.getElementById("myForm").reset();
+          }
+        })
+        .catch(error => {
+          console.error('Error sending object to the API:', error);
+        });
+
+    }
+    // Usage example
+    const blobName = 'nammavarublobstorage';
+    const containerName = 'nammavarucontainer';
+    const sasToken = '?sp=racwd&st=2023-06-13T04:46:44Z&se=2028-06-13T12:46:44Z&sv=2022-11-02&sr=c&sig=txgJiyngkF8QtaV7Vr0zazSEYREOwnFUvinb10HEac8%3D';
+    const accountName = 'nammavarublobstorage';
+     
+        
+  }
+}

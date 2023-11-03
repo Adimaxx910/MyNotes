@@ -1,0 +1,50 @@
+Leetcode 75 Questions (NeetCode on yt)
+_______________________________________________________________________________________________
+https://docs.google.com/spreadsheets/d/1A2PaQKcdwO_lwxz9bAnxXnIQayCouZP6d-ENrBz_NXc/edit?pli=1#gid=0
+__________________________________________________________________________________________________________________________
+SendGrid Account
+adomaxx4@gmail.com
+9Liy44cLn/6Sb-(aaa
+--------------------------------------------------------------------------
+<connectionStrings>
+		<add name="DatabaseFirstApproach" providerName="System.Data.SqlClient" connectionString="Server=ramgolddbserver.database.windows.net;                        Database=RamGoldDb;                        User Id=Prithvicv;                        Password=cvpjmcg@1991;                        Encrypt=True;                        TrustServerCertificate=False;                        Connection Timeout=30;" />
+
+		<add name="DbConnection" connectionString="Data Source=tcp:vocap.database.windows.net;Initial Catalog=VoCAp;MultipleActiveResultSets=true;Persist Security Info=True;User ID=vocapdbadmin;Password=Welcome@123;" providerName="System.Data.SqlClient" />
+	</connectionStrings>
+
+
+Data Source=DESKTOP-BKN03K2\MAXXSERVER;Integrated Security=True;
+Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False
+
+"ConnectionStrings": {
+   "DefaultConnection": "Server=DESKTOP-BKN03K2\MAXXSERVER;Database=UserSignIn;Trusted_Connection=True;TrustServerCertificate=True"
+ }
+---------------------------------------------------------------------------------------
+___________________________________________________________________
+Icons websites
+
+https://www.flaticon.com/search?word=cash%20indian  
+https://fontawesome.com/search?q=users&o=r&m=free&f=classic
+
+_________________________Technical Interview____________________
+https://codesignal.com/
+
+https://coderpad.io/
+
+__________________________________________
+…or create a new repository on the command line
+-------------------------------------------------------------------
+git init
+git status
+git add .
+git commit -m "first commit"
+git remote add origin  https://github.com/Adimaxx910/AdmindashboardRamGold.git
+git push origin master --force
+
+
+…or push an existing repository from the command line
+-----------------------------------------------
+git remote add origin 
+https://github.com/Adimaxx910/AdmindashboardRamGold.git
+git branch -M main
+git push -u origin main
